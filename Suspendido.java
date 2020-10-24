@@ -8,6 +8,7 @@ public class Suspendido implements Estado{
     public Suspendido(Robot usuario){
         this.usuario = usuario;
         nombreDelEstado = "Suspendido";
+        cambioAutomatico = new EstrategiaActivarse(this);
     }
 
     public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
@@ -15,7 +16,7 @@ public class Suspendido implements Estado{
     }
 
     public void activarse(){
-        System.out.println("Activándose" + nombreDelEstado);
+        System.out.println("Activándose" );
         Estado siguienteEstado = usuario.getrecibiendoOrden();
         usuario.cambiarEstado(siguienteEstado);
         siguienteEstado.cambioAutomatico(new EstrategiaCaminar(siguienteEstado));

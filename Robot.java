@@ -80,7 +80,7 @@ public class Robot{
         System.out.println("5.- Reabastecer");
         System.out.println("6.- Construir");
         System.out.println("7.- Suspenderse");
-        i = obtenerDigito(1, 7);
+        i = obtenerDigito(1, 7, "Opcion incorrecta");
         
         switch (i) {
             case 1:
@@ -112,14 +112,18 @@ public class Robot{
             
         }
     }
-    private int obtenerDigito(int limiteInferior, int limiteSuperior){
+    private int obtenerDigito(int limiteInferior, int limiteSuperior, String mensajeError){
         Scanner sc = new Scanner(System.in);
         int digitoObtenido = limiteSuperior + 1;
         String bufferCleaner = "";
         while(digitoObtenido < limiteInferior || digitoObtenido > limiteSuperior){
             if(sc.hasNextInt()) digitoObtenido = sc.nextInt();
-            else bufferCleaner = sc.nextLine();
+            else {
+                bufferCleaner = sc.nextLine();
+                System.out.println(mensajeError);
+            }
         }
+        return digitoObtenido;
     }
     public void desplegarMenuRecepcionOrden(){
         //FALTA
