@@ -1,11 +1,11 @@
-public class Reabasteciendo{
+public class Reabasteciendo implements Estado{
     
     protected Robot usuario;
     protected String NombreDelEstado;
     protected EstrategiaCambioAutomatico cambioAutomatico;
     
 
-    public Reabastecer(Robor usuario){
+    public Reabasteciendo(Robot usuario){
         this.usuario = usuario;
         NombreDelEstado = "Reabasteciendo";
     }
@@ -19,14 +19,15 @@ public class Reabasteciendo{
         cambioAutomatico();
     }
     public void caminar(){
-        if(cambioAutomatico.getClass() != EstrategiaCaminar){
+        if(cambioAutomatico.getClass() != new EstrategiaCaminar(null).getClass()){
             System.out.println("No es posible caminar porque estas: " + NombreDelEstado);
+            cambioAutomatico();
             return;
         }else{
             System.out.println("Caminando");
             Estado siguiente = usuario.getcaminando();
             usuario.cambiarEstado(siguiente);
-            siguiente.cambioAutomatico(new EstrategiaDirigirseAlAreaDeConstruccion());
+            siguiente.cambioAutomatico(new EstrategiaDirigirseAlAreaDeConstruccion(siguiente));
             usuario.desplegarMenuAcciones();
         }
 
@@ -36,15 +37,16 @@ public class Reabasteciendo{
     }
     public void dirigirseAlAreaDeConstruccion(){
         System.out.println("No es posible dirigirse al area de construccion porque estas: " + NombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void reabastecer(){
-        if(cambioAutomatico.getClass() != EstrategiaReabastecer){
+        if(cambioAutomatico.getClass() != new EstrategiaReabastecer(null).getClass()){
             System.out.println("No es posible reabastecerse.");
+            cambioAutomatico();
             return;
         }else{
             System.out.println("Reabasteciendo");
-            Estado siguiente = usuario.reabasteciendo();
+            Estado siguiente = usuario.getreabasteciendo();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
             usuario.desplegarMenuAcciones();
@@ -52,13 +54,13 @@ public class Reabasteciendo{
     }
     public void construir(){
         System.out.println("No es posible construir porque estas: " + NombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void cambioAutomatico(){
-        if(EstrategiaCambioAutomatico != null)EstrategiaCambioAutomatico.ejecucionMetodoAutomatico();
+        if(cambioAutomatico != null) cambioAutomatico.ejecucionMetodoAutomatico();
     }
 }

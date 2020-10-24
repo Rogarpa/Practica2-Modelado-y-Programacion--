@@ -6,7 +6,7 @@ public class EstrategiaDirigirseAlAreaDeConstruccion implements EstrategiaCambio
         this.estadoAAplicarMetodoAutomatico = estadoAAplicarMetodoAutomatico;
     }
     
-    public void ejecucionMetodoAutomatico(Estado EstadoACambiarAutomaticamente){
+    public void ejecucionMetodoAutomatico(){
         estadoAAplicarMetodoAutomatico.dirigirseAlAreaDeConstruccion();
     }
 }

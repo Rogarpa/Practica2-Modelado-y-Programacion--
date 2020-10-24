@@ -1,4 +1,4 @@
-public class Suspendido{
+public class Suspendido implements Estado{
 
     protected Robot usuario;
     protected String nombreDelEstado;
@@ -24,29 +24,28 @@ public class Suspendido{
     }
     public void caminar(){
         System.out.println("No es posible caminar porque estas: " + nombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void dirigirseAlAreaDeReabastecimiento(){
         System.out.println("No es posible dirigirse al area de trabajo porque estas: " + nombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void dirigirseAlAreaDeConstruccion(){
         System.out.println("No es posible dirigirse al area de construccion porque estas: " + nombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void reabastecer(){
         System.out.println("No es posible reabastecerse porque estas: " + nombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void construir(){
         System.out.println("No es posible construir porque estas: " + nombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
-        cambioAutomático();
+        cambioAutomatico();
     }
-    protected void cambioAutomatico(){
-        EstrategiaCambioAutomatico.ejecucionMetodoAutomatico();
-    }
-}
+    public void cambioAutomatico(){
+        if(cambioAutomatico != null) cambioAutomatico.ejecucionMetodoAutomatico();
+    }}

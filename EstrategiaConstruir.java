@@ -1,12 +1,12 @@
-public class EstrategiaCaminar implements EstrategiaCambioAutomatico{
+public class EstrategiaConstruir implements EstrategiaCambioAutomatico{
 
     protected Estado estadoAAplicarMetodoAutomatico;
 
-    public EstrategiaCaminar(Estado estadoAAplicarMetodoAutomatico){
+    public EstrategiaConstruir(Estado estadoAAplicarMetodoAutomatico){
         this.estadoAAplicarMetodoAutomatico = estadoAAplicarMetodoAutomatico;
     }
     
     public void ejecucionMetodoAutomatico(){
-        estadoAAplicarMetodoAutomatico.caminar();
+        estadoAAplicarMetodoAutomatico.construir();
     }
 }

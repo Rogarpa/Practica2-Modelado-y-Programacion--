@@ -1,4 +1,4 @@
-public class Caminando{
+public class Caminando implements Estado{
     
     protected Robot usuario;
     protected String NombreDelEstado;
@@ -8,6 +8,7 @@ public class Caminando{
     public Caminando(Robot usuario){
         this.usuario = usuario;
         NombreDelEstado = "Caminando";
+        cambioAutomatico = null;
     }
 
     public void cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
@@ -20,12 +21,13 @@ public class Caminando{
     }
     public void caminar(){
         System.out.println("No es posible caminar porque ya lo estás haciendo.");
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void dirigirseAlAreaDeReabastecimiento(){
 
-        if(cambioAutomatico.getClass() != EstrategiaDirigirseAlAreaDeReabastecimiento){
+        if(cambioAutomatico.getClass() != new EstrategiaDirigirseAlAreaDeReabastecimiento(null).getClass()){
             System.out.println("No es posible dirigirse al area de reabastecimiento.");
+            cambioAutomatico();
             return;
         }else {
             Estado siguienteEstado = usuario.getreabasteciendo();
@@ -35,8 +37,9 @@ public class Caminando{
         }
     }
     public void dirigirseAlAreaDeConstruccion(){
-        if(cambioAutomatico.getClass() != EstrategiaDirigirseAlAreaDeConstruccion){
+        if(cambioAutomatico.getClass() != new EstrategiaDirigirseAlAreaDeConstruccion(null).getClass()){
             System.out.println("No es posible dirigirse al area de construccion porque debes ir al area de construccion");
+            cambioAutomatico();
             return;
         }else{
             Estado siguienteEstado = usuario.gettrabajando();
@@ -47,17 +50,17 @@ public class Caminando{
     }
     public void reabastecer(){
         System.out.println("No es posible reabastecerse porque estas: " + NombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void construir(){
         System.out.println("No es posible construir porque estas: " + NombreDelEstado);
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
-        cambioAutomático();
+        cambioAutomatico();
     }
     public void cambioAutomatico(){
-        if(EstrategiaCambioAutomatico != null) EstrategiaCambioAutomatico.ejecucionMetodoAutomatico();
+        if(cambioAutomatico != null) cambioAutomatico.ejecucionMetodoAutomatico();
     }
 }

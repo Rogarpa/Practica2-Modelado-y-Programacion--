@@ -6,7 +6,7 @@ public class EstrategiaReabastecer implements EstrategiaCambioAutomatico{
         this.estadoAAplicarMetodoAutomatico = estadoAAplicarMetodoAutomatico;
     }
     
-    public void ejecucionMetodoAutomatico(Estado EstadoACambiarAutomaticamente){
+    public void ejecucionMetodoAutomatico(){
         estadoAAplicarMetodoAutomatico.reabastecer();
     }
 }

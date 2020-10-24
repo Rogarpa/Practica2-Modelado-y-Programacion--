@@ -1,4 +1,4 @@
-public abstract Construccion{
+public class Construccion{
 
     
 }
