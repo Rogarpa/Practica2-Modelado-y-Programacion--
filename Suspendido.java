@@ -7,10 +7,10 @@ public class Suspendido{
 
     public Suspendido(Robot usuario){
         this.usuario = usuario;
-        nombreDelEstado = "Suspendido"
+        nombreDelEstado = "Suspendido";
     }
 
-    public cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
+    public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
         this.cambioAutomatico = cambioAutomatico;
     }
 

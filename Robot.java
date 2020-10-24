@@ -37,6 +37,10 @@ public class Robot{
         return orden;
     }
 
+    public Construccion getcasa(){
+        return casa;
+    }
+
     public Estado activarse(){
         estadoactual.activarse();
     }

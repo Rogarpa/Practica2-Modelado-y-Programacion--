@@ -7,10 +7,10 @@ public class RecibiendoOrden{
 
     public RecibiendoOrden(Robot usuario){
         this.usuario = usuario;
-        NombreDelEstado = "Recibiendo Orden"
+        NombreDelEstado = "Recibiendo Orden";
     }
 
-    public cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
+    public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
         this.cambioAutomatico = cambioAutomatico;
     }
 

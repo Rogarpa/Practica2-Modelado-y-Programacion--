@@ -1,6 +1,6 @@
 public interface Estado{
  
-    public cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico);
+    public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico);
     public void activarse();
     public void caminar();
     public void dirigirseAlAreaDeReabastecimiento();

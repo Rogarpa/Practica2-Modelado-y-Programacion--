@@ -2,7 +2,7 @@ public class EstrategiaDirigirseAlAreaDeReabastecimiento implements EstrategiaCa
 
     protected Estado estadoAAplicarMetodoAutomatico;
 
-    public EstrategiaCambioAutomatico(Estado estadoAAplicarMetodoAutomatico){
+    public EstrategiaDirigirseAlAreaDeReabastecimiento(Estado estadoAAplicarMetodoAutomatico){
         this.estadoAAplicarMetodoAutomatico = estadoAAplicarMetodoAutomatico;
     }
     
