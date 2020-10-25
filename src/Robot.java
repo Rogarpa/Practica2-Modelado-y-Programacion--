@@ -106,6 +106,7 @@ public class Robot{
                 break;
                 default:
                 System.out.println("Opción incorrecta");
+                dan=true;
                 break;
             }
         } while (dan==true);
@@ -136,26 +137,29 @@ public class Robot{
         String aislamiento="Digite el aislamiento de su preferencia y presione enter \n 1.-Aislamiento de vidrio \n 2.- Aislamiento de madera \n 3 Aislamiento de concreto \n 4.-Aislamiento reforzado.";
 
         do {
-            dani = false;
             switch (getint(esqueleto,"No es un número válido.")) {
                 case 1:
                 switch (getint(aislamiento,"No es un número válido.")) {
                     case 1:
                     casa=new AislamientoVidrio();
+                    dani=false;
                     break;
                     case 2:
                     casa=new AislamientoMadera();
+                    dani=false;
                     break;
                     case 3:
                     casa=new AislamientoMadera();
+                    dani=false;
                     break;
                     case 4:
                     casa=new AislamientoReforzado();
+                    dani=false;
                     break;
                     default:
                     System.out.println("Opción incorrecta");
                     desplegarMenuRecepcionOrden();
-                    dani = true;
+                    dani=true;
                     break;
                 }
                 break;
@@ -163,20 +167,24 @@ public class Robot{
                 switch (getint(aislamiento,"No es un número válido.")) {
                     case 1:
                     casa=new AislamientoVidrioEsqReforzado();
+                    dani=false;
                     break;
                     case 2:
                     casa=new AislamientoMaderaEsqReforzado();
+                    dani=false;
                     break;
                     case 3:
                     casa=new AislamientoMaderaEsqReforzado();
+                    dani=false;
                     break;
                     case 4:
                     casa=new AislamientoReforzadoEsqReforzado();
+                    dani=false;
                     break;
                     default:
                     System.out.println("Opción incorrecta");
                     desplegarMenuRecepcionOrden();
-                    dani = true;
+                    dani=true;
                     break;
                 }
                 break;
