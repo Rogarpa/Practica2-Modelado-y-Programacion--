@@ -14,18 +14,24 @@ public class Caminando implements Estado{
         cambioAutomatico = null;
     }
 
+    /**
+    *Si existe un cambio automatico, ejecuta su metodo por defecto.
+    */
     public void cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
         this.cambioAutomatico = cambioAutomatico;
     }
 
+    @Override
     public void activarse(){
         System.out.println("No es posible activarse porque estas:" + NombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void caminar(){
         System.out.println("No es posible caminar porque ya lo estás haciendo.");
         cambioAutomatico();
     }
+    @Override
     public void dirigirseAlAreaDeReabastecimiento(){
 
         if(cambioAutomatico.getClass() != new EstrategiaDirigirseAlAreaDeReabastecimiento(null).getClass()){
@@ -39,6 +45,7 @@ public class Caminando implements Estado{
             usuario.desplegarMenuAcciones();
         }
     }
+    @Override
     public void dirigirseAlAreaDeConstruccion(){
         if(cambioAutomatico.getClass() != new EstrategiaDirigirseAlAreaDeConstruccion(null).getClass()){
             System.out.println("No es posible dirigirse al area de construccion porque debes ir al area de construccion");
@@ -51,18 +58,24 @@ public class Caminando implements Estado{
             usuario.desplegarMenuAcciones();
         }
     }
+    @Override
     public void reabastecer(){
         System.out.println("No es posible reabastecerse porque estas: " + NombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void construir(){
         System.out.println("No es posible construir porque estas: " + NombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
         cambioAutomatico();
     }
+    /**
+    *Si existe un cambio automatico, ejecuta su metodo por defecto.
+    */
     public void cambioAutomatico(){
         if(cambioAutomatico != null) cambioAutomatico.ejecucionMetodoAutomatico();
     }

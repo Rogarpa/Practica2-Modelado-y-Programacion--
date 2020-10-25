@@ -14,10 +14,14 @@ public class Suspendido implements Estado{
         cambioAutomatico = new EstrategiaActivarse(this);
     }
 
+    /**
+    *Si existe un cambio automatico, ejecuta su metodo por defecto.
+    */
     public void cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
         this.cambioAutomatico = cambioAutomatico;
     }
 
+    @Override
     public void activarse(){
         System.out.println("Activándose" );
         Estado siguienteEstado = usuario.getrecibiendoOrden();
@@ -26,30 +30,39 @@ public class Suspendido implements Estado{
         usuario.desplegarMenuRecepcionOrden();
         usuario.desplegarMenuAcciones();
     }
+    @Override
     public void caminar(){
         System.out.println("No es posible caminar porque estas: " + nombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void dirigirseAlAreaDeReabastecimiento(){
         System.out.println("No es posible dirigirse al area de trabajo porque estas: " + nombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void dirigirseAlAreaDeConstruccion(){
         System.out.println("No es posible dirigirse al area de construccion porque estas: " + nombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void reabastecer(){
         System.out.println("No es posible reabastecerse porque estas: " + nombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void construir(){
         System.out.println("No es posible construir porque estas: " + nombreDelEstado);
         cambioAutomatico();
     }
+    @Override
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
         cambioAutomatico();
     }
+    /**
+    *Si existe un cambio automatico, ejecuta su metodo por defecto.
+    */
     public void cambioAutomatico(){
         if(cambioAutomatico != null) cambioAutomatico.ejecucionMetodoAutomatico();
     }}
