@@ -4,14 +4,17 @@ public class Suspendido implements Estado{
     protected String nombreDelEstado;
     protected EstrategiaCambioAutomatico cambioAutomatico;
     
-
+    /**
+    * Construye un estado trabajando, instanciando su cadena para notificar y definiendo el Robot que lo usara. 
+    * @param usuario robot que lo usara.
+    */
     public Suspendido(Robot usuario){
         this.usuario = usuario;
         nombreDelEstado = "Suspendido";
         cambioAutomatico = new EstrategiaActivarse(this);
     }
 
-    public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
+    public void cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico){
         this.cambioAutomatico = cambioAutomatico;
     }
 

@@ -4,7 +4,10 @@ public class Trabajando implements Estado{
     protected String NombreDelEstado;
     protected EstrategiaCambioAutomatico cambioAutomatico;
 
-
+/**
+ * Construye un estado trabajando, instanciando su cadena para notificar y definiendo el Robot que lo usara. 
+ * @param usuario robot que lo usara.
+ */
     public Trabajando(Robot usuario){
         this.usuario = usuario;
         NombreDelEstado = "Trabajando";

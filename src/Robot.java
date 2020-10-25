@@ -11,6 +11,9 @@ public class Robot{
     
     protected Construccion casa;
     
+    /**
+     * Constructor de robot encargado de inicializar todas las variables de clase.
+     */
     public Robot(){
         this.estadoActual = estadoActual;
         suspendido = new Suspendido(this);
@@ -20,54 +23,101 @@ public class Robot{
         trabajando = new Trabajando(this);
     }
     
+    /**
+     * Recibe un estado a configurar como estado temporal.
+     * @param estadoActual estado a reemplazar.
+     */
     public void cambiarEstado(Estado estadoActual){
         this.estadoActual = estadoActual;
     }
     
+    /**
+     * Regresa el estado construido con respecto a esta clase.
+     * @return estado suspendido.
+     */
     public Estado getsuspendido(){
         return suspendido;
     }
+    /**
+     * Regresa el estado construido con respecto a esta clase.
+     * @return estado recibiendo orden.
+     */
     public Estado getrecibiendoOrden(){
         return recibiendoOrden;
     }
+    /**
+     * Regresa el estado construido con respecto a esta clase.
+     * @return estado caminando.
+     */
     public Estado getcaminando(){
         return caminando;
     }
+    /**
+     * Regresa el estado construido con respecto a esta clase.
+     * @return estado reabasteciendo.
+     */
     public Estado getreabasteciendo(){
         return reabasteciendo;
     }
+    /**
+     * Regresa el estado construido con respecto a esta clase.
+     * @return estado trabajando.
+     */
     public Estado gettrabajando(){
         return trabajando;
     }
-    public Estado getorden(){
-        return orden;
-    }
-    
+    /**
+     * Regresa la casa que funge como pedido.
+     * @return la casa ordenada a construir.
+     */
     public Construccion getcasa(){
         return casa;
     }
+    /**
+     * Solicita al estado actual del Robot, activarse.
+     */
     public void activarse(){
         estadoActual.activarse();
     }
+    /**
+     * Solicita al estado actual del Robot, caminar.
+     */
     public void caminar(){
         estadoActual.caminar();
     }
+    /**
+     * Solicita al estado actual del Robot, dirigirse al area de reabastecimiento.
+     */
     public void dirigirseAlAreaDeReabastecimiento(){
         estadoActual.dirigirseAlAreaDeReabastecimiento();
     }
+    /**
+     * Solicita al estado actual del Robot, dirigirse al area de construccion.
+     */
     public void dirigirseAlAreaDeConstruccion(){
         estadoActual.dirigirseAlAreaDeConstruccion();
     }
+    /**
+     * Solicita al estado actual del Robot, reabastecerse.
+     */
     public void reabastecer(){
         estadoActual.reabastecer();
     }
+    /**
+     * Solicita al estado actual del Robot, construir el pedido almacenado en casa.
+     */
     public void construir(){
         estadoActual.construir();
     }
+    /**
+     * Solicita al estado actual del Robot, suspenderse.
+     */
     public void suspenderse(){
         estadoActual.suspenderse();
     }
-    
+    /**
+     * Despliega un menu de acciones posibles a solicitar a todos los estados.
+     */
     public void desplegarMenuAcciones(){
         int i = 0;
         boolean dan=true;
@@ -110,25 +160,32 @@ public class Robot{
             }
         } while (dan==true);
     }
-    
-    public int getint(String a, String b){
+    /**
+     * Imprime una indicación y devuelve la entrada estandar hasta que esta es capaz de ser guardada en un entero, de lo contrario imprime un mensaje de error y la indicación de nuevo hasta que es así.
+     * @param indicacion el mensaje correspondiente a la indicación.
+     * @param error el mensaje de error.
+     * @return el unico digito obtenido de la entrada estandar.
+     */
+    public int getint(String indicacion, String error){
         int num=0;
         boolean c=true;
         Scanner scn=new Scanner(System.in);
         do{
-            System.out.println(a);
+            System.out.println(indicacion);
             if(scn.hasNextInt()){
                 num=scn.nextInt();
                 c=false;
             }
             else{
                 scn.next();
-                System.out.println(b);
+                System.out.println(error);
             }
         }while(c);
         return num;
     }
-    
+    /**
+     * Despliega un menu para recibir la orden entre las ordenes disponibles para construir.
+     */
     public void desplegarMenuRecepcionOrden(){
         int m=0;
         boolean dani=true;
