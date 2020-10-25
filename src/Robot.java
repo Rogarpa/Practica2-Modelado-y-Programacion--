@@ -44,7 +44,7 @@ public class Robot{
     }
     
     public Construccion getcasa(){
-        return casa;
+        return casa; 
     }
     
     public void activarse(){
@@ -108,8 +108,6 @@ public class Robot{
             default:
             System.out.println("Opción incorrecta");
             desplegarMenuAcciones();
-            
-            
         }
     }
     private int obtenerDigito(int limiteInferior, int limiteSuperior, String mensajeError){

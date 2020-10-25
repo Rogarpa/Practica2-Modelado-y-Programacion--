@@ -19,7 +19,7 @@ public class Trabajando implements Estado{
         cambioAutomatico();
     }
     public void caminar(){
-        if(cambioAutomatico.getClass() != new EstrategiaCaminar(null).getClass()){
+        if(cambioAutomatico.getclass() != new EstrategiaCaminar(null).getClass()){
             System.out.println("No es posible caminar porque estas: " + NombreDelEstado);
             cambioAutomatico();
             return;
@@ -49,7 +49,7 @@ public class Trabajando implements Estado{
             return;
         }else{
             System.out.println("Construyendo");
-            //FALTA TU METODOS usuario.getcasa();
+            usuario.getcasa().template();
             Estado siguiente = usuario.gettrabajando();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
