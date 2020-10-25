@@ -9,7 +9,7 @@ public class Robot{
     protected Estado trabajando;
 
     protected Construccion casa;
-    
+
     /**
      * Constructor de robot encargado de inicializar todas las variables de clase.
      */
@@ -22,7 +22,7 @@ public class Robot{
         reabasteciendo = new Reabasteciendo(this);
         trabajando = new Trabajando(this);
     }
-    
+
     /**
      * Recibe un estado a configurar como estado temporal.
      * @param estadoActual estado a reemplazar.
@@ -30,7 +30,7 @@ public class Robot{
     public void cambiarEstado(Estado estadoActual){
         this.estadoActual = estadoActual;
     }
-    
+
     public Estado getsuspendido(){
         return suspendido;
     }
@@ -114,6 +114,7 @@ public class Robot{
     public void desplegarMenuAcciones(){
         int i = 0;
         boolean dan=true;
+        System.out.println("///////////////////////////////////////////////");
         do {
             System.out.println("0.-Terminar menu");
             System.out.println("1.- Activarse");
@@ -186,9 +187,12 @@ public class Robot{
         boolean dani=true;
         String esqueleto="Digite el esqueleto de su preferencia y presione enter:\n 1.-Esqueleto de Concreto \n 2.- Esqueleto Reforzado.";
         String aislamiento="Digite el aislamiento de su preferencia y presione enter \n 1.-Aislamiento de vidrio \n 2.- Aislamiento de madera \n 3 Aislamiento de concreto \n 4.-Aislamiento reforzado.";
-
+        System.out.println("///////////////////////////////////////////////");
         do {
             switch (getint(esqueleto,"No es un número válido.")) {
+                case 0:
+                dani=false;
+                break;
                 case 1:
                 switch (getint(aislamiento,"No es un número válido.")) {
                     case 1:
