@@ -1,3 +1,4 @@
+
  public class AislamientoMaderaEsqReforzado extends EsqueletoReforzado{
     int PrecioAislamientoMadera=1000;
 
@@ -5,5 +6,4 @@
         System.out.println("Construyendo aislamiento de Madera");
         Precio += PrecioAislamientoMadera;
     }
-
 }

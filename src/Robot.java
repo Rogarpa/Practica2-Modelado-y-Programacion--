@@ -1,19 +1,19 @@
 import java.util.Scanner;
 public class Robot{
     protected Estado estadoActual;
-    
+
     protected Estado suspendido;
     protected Estado recibiendoOrden;
     protected Estado caminando;
     protected Estado reabasteciendo;
     protected Estado trabajando;
-    protected Estado orden;
-    
+
     protected Construccion casa;
     
     /**
      * Constructor de robot encargado de inicializar todas las variables de clase.
      */
+
     public Robot(){
         this.estadoActual = estadoActual;
         suspendido = new Suspendido(this);
@@ -31,10 +31,6 @@ public class Robot{
         this.estadoActual = estadoActual;
     }
     
-    /**
-     * Regresa el estado construido con respecto a esta clase.
-     * @return estado suspendido.
-     */
     public Estado getsuspendido(){
         return suspendido;
     }
@@ -66,10 +62,6 @@ public class Robot{
     public Estado gettrabajando(){
         return trabajando;
     }
-    /**
-     * Regresa la casa que funge como pedido.
-     * @return la casa ordenada a construir.
-     */
     public Construccion getcasa(){
         return casa;
     }
@@ -118,6 +110,7 @@ public class Robot{
     /**
      * Despliega un menu de acciones posibles a solicitar a todos los estados.
      */
+
     public void desplegarMenuAcciones(){
         int i = 0;
         boolean dan=true;
@@ -186,10 +179,11 @@ public class Robot{
     /**
      * Despliega un menu para recibir la orden entre las ordenes disponibles para construir.
      */
+
     public void desplegarMenuRecepcionOrden(){
         int m=0;
         boolean dani=true;
-        String esqueleto="Digite el esqueleto de su preferencia y presione enter:/n 1.-Esqueleto de Concreto /n 2.- Esqueleto Reforzado.";
+        String esqueleto="Digite el esqueleto de su preferencia y presione enter:\n 1.-Esqueleto de Concreto \n 2.- Esqueleto Reforzado.";
         String aislamiento="Digite el aislamiento de su preferencia y presione enter \n 1.-Aislamiento de vidrio \n 2.- Aislamiento de madera \n 3 Aislamiento de concreto \n 4.-Aislamiento reforzado.";
 
         do {
@@ -198,16 +192,16 @@ public class Robot{
                 case 1:
                 switch (getint(aislamiento,"No es un número válido.")) {
                     case 1:
-                    casa=new AislamientoVidrioEsqConcreto();
+                    casa=new AislamientoVidrio();
                     break;
                     case 2:
-                    casa=new AislamientoMaderaEsqConcreto();
+                    casa=new AislamientoMadera();
                     break;
                     case 3:
-                    casa=new AislamientoMaderaEsqConcreto();
+                    casa=new AislamientoMadera();
                     break;
                     case 4:
-                    casa=new AislamientoReforzadoEsqConcreto();
+                    casa=new AislamientoReforzado();
                     break;
                     default:
                     System.out.println("Opción incorrecta");
@@ -243,8 +237,8 @@ public class Robot{
                 dani = true;
                 break;
             }
-            
+
         } while (dani==true);
-        
+
     }
 }

@@ -59,7 +59,7 @@ public class RecibiendoOrden implements Estado{
     }
     @Override
     public void suspenderse(){
-        System.out.println("Ya estas: suspendido");
+        System.out.println("No es posible suspenderse");
         cambioAutomatico();
     }
     /**

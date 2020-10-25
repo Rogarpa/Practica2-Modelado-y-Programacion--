@@ -64,7 +64,7 @@ public class Trabajando implements Estado{
             usuario.getcasa().template();
             Estado siguiente = usuario.gettrabajando();
             usuario.cambiarEstado(siguiente);
-            siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
+            siguiente.cambioAutomatico(new EstrategiaSuspenderse(siguiente));
             usuario.desplegarMenuAcciones();
         }
 
@@ -72,7 +72,7 @@ public class Trabajando implements Estado{
     }
     @Override
     public void suspenderse(){
-        System.out.println("Ya estas: suspendido");
+        System.out.println("No es posible suspenderse");
         cambioAutomatico();
     }
     /**

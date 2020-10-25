@@ -39,9 +39,10 @@ public class Caminando implements Estado{
             cambioAutomatico();
             return;
         }else {
+            System.out.println("Dirigiéndose al area de reabastecimiento");
             Estado siguienteEstado = usuario.getreabasteciendo();
             usuario.cambiarEstado(siguienteEstado);
-            siguienteEstado.cambioAutomatico(new EstrategiaCaminar(siguienteEstado));
+            siguienteEstado.cambioAutomatico(new EstrategiaReabastecer(siguienteEstado));
             usuario.desplegarMenuAcciones();
         }
     }
@@ -52,9 +53,10 @@ public class Caminando implements Estado{
             cambioAutomatico();
             return;
         }else{
+            System.out.println("Dirigiéndose al area de construccion");
             Estado siguienteEstado = usuario.gettrabajando();
             usuario.cambiarEstado(siguienteEstado);
-            siguienteEstado.cambioAutomatico(new EstrategiaCaminar(siguienteEstado));
+            siguienteEstado.cambioAutomatico(new EstrategiaConstruir(siguienteEstado));
             usuario.desplegarMenuAcciones();
         }
     }
@@ -70,8 +72,17 @@ public class Caminando implements Estado{
     }
     @Override
     public void suspenderse(){
-        System.out.println("Ya estas: suspendido");
-        cambioAutomatico();
+        if(cambioAutomatico.getClass() != new EstrategiaSuspenderse(null).getClass() ){
+            System.out.println("No es posible suspenderse");
+            cambioAutomatico();
+        }else{
+            System.out.println("Suspendiendose");
+            Estado siguienteEstado = usuario.getsuspendido();
+            usuario.cambiarEstado(siguienteEstado);
+            siguienteEstado.cambioAutomatico(new EstrategiaActivarse(siguienteEstado));
+            usuario.desplegarMenuAcciones();
+        }
+
     }
     /**
     *Si existe un cambio automatico, ejecuta su metodo por defecto.

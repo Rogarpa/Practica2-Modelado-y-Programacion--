@@ -28,6 +28,7 @@ public class Suspendido implements Estado{
         usuario.cambiarEstado(siguienteEstado);
         siguienteEstado.cambioAutomatico(new EstrategiaCaminar(siguienteEstado));
         usuario.desplegarMenuRecepcionOrden();
+        usuario.getcasa().template();
         usuario.desplegarMenuAcciones();
     }
     @Override
