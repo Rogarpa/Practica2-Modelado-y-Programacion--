@@ -1,6 +1,6 @@
 public abstract class Construccion{
 
-    int Precio;
+    int Precio = 1000;
 
     /**
     *Metodo para generar el patrón template.
@@ -11,6 +11,7 @@ public abstract class Construccion{
         construccionEsqueleto();
         electricPlumber();
         aislamiento();
+        System.out.println("Costo total: $" + Precio);
     }
 
     void prepTerreno(){
