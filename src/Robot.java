@@ -1,16 +1,16 @@
 import java.util.Scanner;
 public class Robot{
     protected Estado estadoActual;
-    
+
     protected Estado suspendido;
     protected Estado recibiendoOrden;
     protected Estado caminando;
     protected Estado reabasteciendo;
     protected Estado trabajando;
     protected Estado orden;
-    
+
     protected Construccion casa;
-    
+
     public Robot(){
         this.estadoActual = estadoActual;
         suspendido = new Suspendido(this);
@@ -19,11 +19,11 @@ public class Robot{
         reabasteciendo = new Reabasteciendo(this);
         trabajando = new Trabajando(this);
     }
-    
+
     public void cambiarEstado(Estado estadoActual){
         this.estadoActual = estadoActual;
     }
-    
+
     public Estado getsuspendido(){
         return suspendido;
     }
@@ -42,11 +42,10 @@ public class Robot{
     public Estado getorden(){
         return orden;
     }
-    
+
     public Construccion getcasa(){
-        return casa; 
+        return casa;
     }
-    
     public void activarse(){
         estadoActual.activarse();
     }
@@ -68,10 +67,10 @@ public class Robot{
     public void suspenderse(){
         estadoActual.suspenderse();
     }
-    
+
     public void desplegarMenuAcciones(){
         int i = 0;
-        
+
         System.out.println("Digite el número de la opción y presione enter: ");
         System.out.println("1.- Activarse");
         System.out.println("2.- Caminar");
@@ -81,7 +80,7 @@ public class Robot{
         System.out.println("6.- Construir");
         System.out.println("7.- Suspenderse");
         i = obtenerDigito(1, 7, "Opcion incorrecta");
-        
+
         switch (i) {
             case 1:
             activarse();
@@ -104,7 +103,7 @@ public class Robot{
             case 7:
             suspenderse();
             break;
-            
+
             default:
             System.out.println("Opción incorrecta");
             desplegarMenuAcciones();
@@ -127,5 +126,3 @@ public class Robot{
         //FALTA
     }
 }
-
-

@@ -1,9 +1,9 @@
 public class Trabajando implements Estado{
-    
+
     protected Robot usuario;
     protected String NombreDelEstado;
     protected EstrategiaCambioAutomatico cambioAutomatico;
-    
+
 
     public Trabajando(Robot usuario){
         this.usuario = usuario;
@@ -19,7 +19,7 @@ public class Trabajando implements Estado{
         cambioAutomatico();
     }
     public void caminar(){
-        if(cambioAutomatico.getclass() != new EstrategiaCaminar(null).getClass()){
+        if(cambioAutomatico.getClass() != new EstrategiaCaminar(null).getClass()){
             System.out.println("No es posible caminar porque estas: " + NombreDelEstado);
             cambioAutomatico();
             return;
@@ -56,7 +56,7 @@ public class Trabajando implements Estado{
             usuario.desplegarMenuAcciones();
         }
 
-        
+
     }
     public void suspenderse(){
         System.out.println("Ya estas: suspendido");
