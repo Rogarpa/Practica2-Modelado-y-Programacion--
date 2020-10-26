@@ -30,7 +30,9 @@ public class Robot{
     public void cambiarEstado(Estado estadoActual){
         this.estadoActual = estadoActual;
     }
-
+    /**
+    *Regresa el estado suspendido con respecto a esta clase
+    */
     public Estado getsuspendido(){
         return suspendido;
     }
@@ -62,6 +64,9 @@ public class Robot{
     public Estado gettrabajando(){
         return trabajando;
     }
+    /**
+    *Reguresa el tipo de construccion o caracteristicas a construir.
+    */
     public Construccion getcasa(){
         return casa;
     }
