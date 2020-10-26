@@ -42,7 +42,7 @@ public class Reabasteciendo implements Estado{
     }
     @Override
     public void dirigirseAlAreaDeReabastecimiento(){
-        System.out.println("No es posible dirigirse al area de trabajo porque ya estás en ella");
+        System.out.println("No es posible dirigirse al area de trabajo porque ya estas en ella");
     }
     @Override
     public void dirigirseAlAreaDeConstruccion(){
