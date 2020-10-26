@@ -36,7 +36,7 @@ public class Trabajando implements Estado{
             Estado siguiente = usuario.getcaminando();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaSuspenderse(siguiente));
-            usuario.desplegarMenuAcciones();
+            
         }
     }
     @Override
@@ -66,7 +66,7 @@ public class Trabajando implements Estado{
             Estado siguiente = usuario.gettrabajando();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
-            usuario.desplegarMenuAcciones();
+            
         }
 
 

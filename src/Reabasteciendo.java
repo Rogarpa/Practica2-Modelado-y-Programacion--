@@ -36,7 +36,7 @@ public class Reabasteciendo implements Estado{
             Estado siguiente = usuario.getcaminando();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaDirigirseAlAreaDeConstruccion(siguiente));
-            usuario.desplegarMenuAcciones();
+            
         }
 
     }
@@ -60,7 +60,7 @@ public class Reabasteciendo implements Estado{
             Estado siguiente = usuario.getreabasteciendo();
             usuario.cambiarEstado(siguiente);
             siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
-            usuario.desplegarMenuAcciones();
+            
         }
     }
     @Override

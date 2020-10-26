@@ -43,7 +43,7 @@ public class Caminando implements Estado{
             Estado siguienteEstado = usuario.getreabasteciendo();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaReabastecer(siguienteEstado));
-            usuario.desplegarMenuAcciones();
+            
         }
     }
     @Override
@@ -57,7 +57,7 @@ public class Caminando implements Estado{
             Estado siguienteEstado = usuario.gettrabajando();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaConstruir(siguienteEstado));
-            usuario.desplegarMenuAcciones();
+            
         }
     }
     @Override
@@ -81,7 +81,7 @@ public class Caminando implements Estado{
             Estado siguienteEstado = usuario.getsuspendido();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaActivarse(siguienteEstado));
-            usuario.desplegarMenuAcciones();
+            
         }
 
     }

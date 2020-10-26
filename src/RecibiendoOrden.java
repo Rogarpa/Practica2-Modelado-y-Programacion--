@@ -34,7 +34,7 @@ public class RecibiendoOrden implements Estado{
             Estado siguienteEstado = usuario.getcaminando();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaDirigirseAlAreaDeReabastecimiento(siguienteEstado));
-            usuario.desplegarMenuAcciones();
+            
         }
     }
     @Override

@@ -31,8 +31,8 @@ public class Robot{
         this.estadoActual = estadoActual;
     }
     /**
-    *Regresa el estado suspendido con respecto a esta clase
-    */
+     *Regresa el estado suspendido con respecto a esta clase
+     */
     public Estado getsuspendido(){
         return suspendido;
     }
@@ -65,8 +65,8 @@ public class Robot{
         return trabajando;
     }
     /**
-    *Reguresa el tipo de construccion o caracteristicas a construir.
-    */
+     *Reguresa el tipo de construccion o caracteristicas a construir.
+     */
     public Construccion getcasa(){
         return casa;
     }
@@ -115,13 +115,13 @@ public class Robot{
     /**
      * Despliega un menu de acciones posibles a solicitar a todos los estados.
      */
-
+    
     public void desplegarMenuAcciones(){
-        int i = 0;
-        boolean dan=true;
-        System.out.println("///////////////////////////////////////////////");
+        int indice = 0;
+        System.out.println("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+        System.out.println("//////////////////////////////////////////////////Bienvenido al servicio robotizado de construccion de casas/////////////////////////////////////////////////");
         do {
-            System.out.println("0.-Terminar menu");
+            System.out.println("0.-Reiniciar robot");
             System.out.println("1.- Activarse");
             System.out.println("2.- Caminar");
             System.out.println("3.- Dirigirse al area de reabastecimiento");
@@ -129,9 +129,9 @@ public class Robot{
             System.out.println("5.- Reabastecer");
             System.out.println("6.- Construir");
             System.out.println("7.- Suspenderse");
-            switch(getint("Digite el numero de la opcion y presione enter:","No es un numero valido.")){
+            indice = getint("Digite el numero de la opcion y presione enter:","No es un numero valido.");
+            switch(indice){
                 case 0:
-                dan=false;
                 break;
                 case 1:
                 activarse();
@@ -155,10 +155,9 @@ public class Robot{
                 break;
                 default:
                 System.out.println("Opcion incorrecta");
-                dan=true;
                 break;
             }
-        } while (dan==true);
+        } while (indice != 0);
     }
     /**
      * Imprime una indicacion y devuelve la entrada estandar hasta que esta es capaz de ser guardada en un entero, de lo contrario imprime un mensaje de error y la indicacion de nuevo hasta que es asi.
@@ -188,38 +187,30 @@ public class Robot{
      */
 
     public void desplegarMenuRecepcionOrden(){
-        int m=0;
-        boolean dani=true;
+        boolean fallo = false;
         String esqueleto="Digite el esqueleto de su preferencia y presione enter:\n 1.-Esqueleto de Concreto \n 2.- Esqueleto Reforzado.";
         String aislamiento="Digite el aislamiento de su preferencia y presione enter \n 1.-Aislamiento de vidrio \n 2.- Aislamiento de madera \n 3 Aislamiento de concreto \n 4.-Aislamiento reforzado.";
-        System.out.println("///////////////////////////////////////////////");
+        System.out.println("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
         do {
+            fallo = false;
             switch (getint(esqueleto,"No es un número válido.")) {
-                case 0:
-                dani=false;
-                break;
                 case 1:
                 switch (getint(aislamiento,"No es un numero valido.")) {
                     case 1:
                     casa=new AislamientoVidrio();
-                    dani=false;
                     break;
                     case 2:
                     casa=new AislamientoMadera();
-                    dani=false;
                     break;
                     case 3:
                     casa=new AislamientoMadera();
-                    dani=false;
                     break;
                     case 4:
                     casa=new AislamientoReforzado();
-                    dani=false;
                     break;
                     default:
                     System.out.println("Opcion incorrecta");
-                    desplegarMenuRecepcionOrden();
-                    dani=true;
+                    fallo = true;
                     break;
                 }
                 break;
@@ -227,35 +218,29 @@ public class Robot{
                 switch (getint(aislamiento,"No es un numero valido.")) {
                     case 1:
                     casa=new AislamientoVidrioEsqReforzado();
-                    dani=false;
                     break;
                     case 2:
                     casa=new AislamientoMaderaEsqReforzado();
-                    dani=false;
                     break;
                     case 3:
                     casa=new AislamientoMaderaEsqReforzado();
-                    dani=false;
                     break;
                     case 4:
                     casa=new AislamientoReforzadoEsqReforzado();
-                    dani=false;
                     break;
                     default:
                     System.out.println("Opcion incorrecta");
-                    desplegarMenuRecepcionOrden();
-                    dani=true;
+                    fallo = true;
                     break;
                 }
                 break;
                 default:
                 System.out.println("Opcion incorrecta");
-                desplegarMenuRecepcionOrden();
-                dani = true;
+                fallo = true;
                 break;
             }
 
-        } while (dani==true);
+        } while (fallo);
 
     }
 }
