@@ -23,13 +23,20 @@ public class Suspendido implements Estado{
 
     @Override
     public void activarse(){
-        System.out.println("Activándose" );
+        if(cambioAutomatico.getClass() != new EstrategiaActivarse(null).getClass()){
+            System.out.println("No es posible activarse");
+            cambioAutomatico();
+            return;
+        }else{
+        System.out.println("Activandose" );
+        System.out.println("//////////////////////////////////////////////////Bienvenido al servicio robotizado de construccion de casas//////////////////////////////////////////////////");
         Estado siguienteEstado = usuario.getrecibiendoOrden();
         usuario.cambiarEstado(siguienteEstado);
         siguienteEstado.cambioAutomatico(new EstrategiaCaminar(siguienteEstado));
         usuario.desplegarMenuRecepcionOrden();
         usuario.getcasa().template();
         usuario.desplegarMenuAcciones();
+        }
     }
     @Override
     public void caminar(){

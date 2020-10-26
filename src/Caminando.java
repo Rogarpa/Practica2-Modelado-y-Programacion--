@@ -28,7 +28,7 @@ public class Caminando implements Estado{
     }
     @Override
     public void caminar(){
-        System.out.println("No es posible caminar porque ya lo estás haciendo.");
+        System.out.println("No es posible caminar porque ya lo estas haciendo.");
         cambioAutomatico();
     }
     @Override
@@ -39,7 +39,7 @@ public class Caminando implements Estado{
             cambioAutomatico();
             return;
         }else {
-            System.out.println("Dirigiéndose al area de reabastecimiento");
+            System.out.println("Dirigiendose al area de reabastecimiento");
             Estado siguienteEstado = usuario.getreabasteciendo();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaReabastecer(siguienteEstado));
@@ -53,7 +53,7 @@ public class Caminando implements Estado{
             cambioAutomatico();
             return;
         }else{
-            System.out.println("Dirigiéndose al area de construccion");
+            System.out.println("Dirigiendose al area de construccion");
             Estado siguienteEstado = usuario.gettrabajando();
             usuario.cambiarEstado(siguienteEstado);
             siguienteEstado.cambioAutomatico(new EstrategiaConstruir(siguienteEstado));
@@ -75,6 +75,7 @@ public class Caminando implements Estado{
         if(cambioAutomatico.getClass() != new EstrategiaSuspenderse(null).getClass() ){
             System.out.println("No es posible suspenderse");
             cambioAutomatico();
+            return;
         }else{
             System.out.println("Suspendiendose");
             Estado siguienteEstado = usuario.getsuspendido();

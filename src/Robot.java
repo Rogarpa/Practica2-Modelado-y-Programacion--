@@ -129,7 +129,7 @@ public class Robot{
             System.out.println("5.- Reabastecer");
             System.out.println("6.- Construir");
             System.out.println("7.- Suspenderse");
-            switch(getint("Digite el número de la opción y presione enter:","No es un numero valido.")){
+            switch(getint("Digite el numero de la opcion y presione enter:","No es un numero valido.")){
                 case 0:
                 dan=false;
                 break;
@@ -154,15 +154,15 @@ public class Robot{
                 suspenderse();
                 break;
                 default:
-                System.out.println("Opción incorrecta");
+                System.out.println("Opcion incorrecta");
                 dan=true;
                 break;
             }
         } while (dan==true);
     }
     /**
-     * Imprime una indicación y devuelve la entrada estandar hasta que esta es capaz de ser guardada en un entero, de lo contrario imprime un mensaje de error y la indicación de nuevo hasta que es así.
-     * @param indicacion el mensaje correspondiente a la indicación.
+     * Imprime una indicacion y devuelve la entrada estandar hasta que esta es capaz de ser guardada en un entero, de lo contrario imprime un mensaje de error y la indicacion de nuevo hasta que es asi.
+     * @param indicacion el mensaje correspondiente a la indicacion.
      * @param error el mensaje de error.
      * @return el unico digito obtenido de la entrada estandar.
      */
@@ -199,7 +199,7 @@ public class Robot{
                 dani=false;
                 break;
                 case 1:
-                switch (getint(aislamiento,"No es un número válido.")) {
+                switch (getint(aislamiento,"No es un numero valido.")) {
                     case 1:
                     casa=new AislamientoVidrio();
                     dani=false;
@@ -217,14 +217,14 @@ public class Robot{
                     dani=false;
                     break;
                     default:
-                    System.out.println("Opción incorrecta");
+                    System.out.println("Opcion incorrecta");
                     desplegarMenuRecepcionOrden();
                     dani=true;
                     break;
                 }
                 break;
                 case 2:
-                switch (getint(aislamiento,"No es un número válido.")) {
+                switch (getint(aislamiento,"No es un numero valido.")) {
                     case 1:
                     casa=new AislamientoVidrioEsqReforzado();
                     dani=false;
@@ -242,14 +242,14 @@ public class Robot{
                     dani=false;
                     break;
                     default:
-                    System.out.println("Opción incorrecta");
+                    System.out.println("Opcion incorrecta");
                     desplegarMenuRecepcionOrden();
                     dani=true;
                     break;
                 }
                 break;
                 default:
-                System.out.println("Opción incorrecta");
+                System.out.println("Opcion incorrecta");
                 desplegarMenuRecepcionOrden();
                 dani = true;
                 break;
