@@ -41,7 +41,8 @@ public class Trabajando implements Estado{
     }
     @Override
     public void dirigirseAlAreaDeReabastecimiento(){
-        System.out.println("No es posible dirigirse al area de trabajo porque ya estás en ella");
+        System.out.println("No es posible dirigirse al area de trabajo porque ya estas en ella");
+        cambioAutomatico();
     }
     @Override
     public void dirigirseAlAreaDeConstruccion(){
@@ -64,7 +65,7 @@ public class Trabajando implements Estado{
             usuario.getcasa().template();
             Estado siguiente = usuario.gettrabajando();
             usuario.cambiarEstado(siguiente);
-            siguiente.cambioAutomatico(new EstrategiaSuspenderse(siguiente));
+            siguiente.cambioAutomatico(new EstrategiaCaminar(siguiente));
             usuario.desplegarMenuAcciones();
         }
 

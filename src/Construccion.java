@@ -3,7 +3,7 @@ public abstract class Construccion{
     int Precio = 1000;
 
     /**
-    *Metodo para generar el patrón template.
+    *Metodo para generar el patron template.
     */
     public final void template(){
         prepTerreno();

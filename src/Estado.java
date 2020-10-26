@@ -1,7 +1,7 @@
  public interface Estado{
     
     /**
-     * Reasigna el método que se ejecutara automaticamente en el estado.
+     * Reasigna el metodo que se ejecutara automaticamente en el estado.
      * @param cambioAutomatico metodo a ejecutar automaticamente.
      */
     public void  cambioAutomatico(EstrategiaCambioAutomatico cambioAutomatico);
